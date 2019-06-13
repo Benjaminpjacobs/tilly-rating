@@ -1,75 +1,56 @@
 import React from "react"
 import { Link } from "gatsby"
+import * as PropTypes from "prop-types"
+import styles from '../styles/main.scss'
+import { rhythm } from "../utils/typography"
+import Person from '../components/seo/person'
 
-import { rhythm, scale } from "../utils/typography"
-
-class Layout extends React.Component {
+const propTypes = {
+  children: PropTypes.object.isRequired,
+}
+const Header = () => {
+  return (
+    <div className='navigation'>
+      <Person />
+        <nav className="main-navigation menu" role="navigation">
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/'>Portfolio</Link>
+              </li>
+              <li>
+                <Link to='/about.html'>About</Link>
+              </li>
+            </ul>
+        </nav>
+        <nav className="social-navigation menu" role="navigation">
+          <ul>
+            <li><a href='https://www.facebook.com/chocolatefreedotcom/' target="_blank" rel='noopener'> <img src='/icons/facebook.svg' width='15' height='15' alt='facebook' /></a></li>
+            <li><a href='https://www.instagram.com/chocolatefreeblog' target="_blank" rel='noopener'> <img src='/icons/instagram.svg' width='15' height='15' alt='instagram' /></a></li>
+            <li><a href='https://www.youtube.com/channel/UCAx4forqSrkq2smhZ-X5oSg' target="_blank" rel='noopener'> <img src='/icons/youtube.svg' width='15' height='15' alt='youtube' /></a></li>
+          </ul>
+        </nav>
+      </div>
+    )
+}
+class DefaultLayout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+      <div>
+        <Header />
+        <main> 
+          {this.props.children}
+          <footer className="footer">
+          Copyright © 2017 Chocolate free website, proudly powered by <a href="https://www.contentful.com">Contentful</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsbyjs</a>.
+          </footer>
+        </main>
       </div>
     )
   }
 }
 
-export default Layout
+DefaultLayout.propTypes = propTypes
+
+export default DefaultLayout

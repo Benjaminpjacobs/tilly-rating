@@ -1,0 +1,10 @@
+.two-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.two-images .left, .two-images .right {
+  text-align: center;
+  padding: 1em;
+}

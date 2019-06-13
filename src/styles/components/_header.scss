@@ -1,0 +1,9 @@
+.header {
+  background-image: url('../../static/assets/lukas-blazek-261682-unsplash.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  grid-area: header;
+}

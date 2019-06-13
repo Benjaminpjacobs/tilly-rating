@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Tilly Rating`,
+    author: `Lilly Zoller & Tim Maxwell`,
+    description: `A guide to good food and vegetarian friendly restaurants in Denver, CO.`,
+    siteUrl: `https://tillyrating.com`,
     social: {
-      twitter: `kylemathews`,
+      twitter: ``,
     },
   },
   plugins: [
@@ -47,6 +47,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    'gatsby-plugin-sass',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Tilly Rating`,
+        short_name: `Tilly Rating`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
