@@ -3,13 +3,14 @@ import { Link, graphql } from "gatsby"
 import * as PropTypes from "prop-types"
 import { rhythm } from "../utils/typography"
 import ArticleHeader from '../components/ArticleHeader'
+import Article from '../components/Article'
 import SideBar from '../components/SideBar'
 import FeaturedPosts from '../components/content-modules/featured-posts'
 import LandingPageImage from '../components/content-modules/LandingPageImage'
 // import getLandingPageModule from '../utils/getLandingPageModule'
 import Img from 'gatsby-image'
 import Helmet from 'react-helmet'
-import Layout from "../components/layout"
+import DefaultLayout from "../components/layout"
 
 class BlogIndex extends React.Component {
   render() {
@@ -19,7 +20,7 @@ class BlogIndex extends React.Component {
     const prevPath = {}
     const nextPath = {}
     return (
-      <Layout location={this.props.location} title={siteTitle} children={{}} >
+      <DefaultLayout location={this.props.location} title={siteTitle} children={{}} >
         <div className="grid">
           <div className="header">
             <div className="logo-title">
@@ -28,6 +29,7 @@ class BlogIndex extends React.Component {
           </div>
           <div className="content">
             {/* {articles.map(({ node }, i) => <Article node={node} key={i} />)} */}
+            <Article className='article__item' key="1"/>
             <div className="previousPost pagination">
               {prevPath && <Link to={prevPath}>
                 <svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -54,7 +56,7 @@ class BlogIndex extends React.Component {
           </div>
           <SideBar />
         </div>
-      </Layout>
+      </DefaultLayout>
     )
   }
 }

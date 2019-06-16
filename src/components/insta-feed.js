@@ -1,7 +1,7 @@
 import fetch from 'unfetch'
 import React, { Component } from 'react'
 import cheerio from 'cheerio'
-const url  = 'https://www.instagram.com/tillyratingblog/'
+const url  = 'https://www.instagram.com/benjaminpjacobs/'
 
 class InstaFeed extends Component {
   constructor(props) {

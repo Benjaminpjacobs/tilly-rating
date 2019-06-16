@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SHORTNAME = 'chocolate-free';
-const WEBSITE_URL = 'https://chocolate-free.com';
+const SHORTNAME = 'tilly_rating';
+const WEBSITE_URL = 'https://tillyrating.com';
 
 function renderDisqus() {
   if (window.DISQUS === undefined) {

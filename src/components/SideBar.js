@@ -14,11 +14,11 @@ class SideBar extends Component {
         <div className="widget widget-text">
           <h3 className="widget-title"> Meet Tilly</h3>
           <Link to="/about.html">
-            {/* <img
-              src="https://images.ctfassets.net/0w6gaytm0wfv/eLUCi9XuJaQgSMU2eM4gC/062ce3244d5372a78892a8990c229388/d5c74354-60cd-4c8f-af44-47ab5d2b5c05.JPG?w=230"
+            <img
+              src="/assets/tilly.jpeg"
               width="230"
-              alt="Amal Nasri"
-            /> */}
+              alt="Tilly"
+            />
           </Link>
         </div>
         <div className="widget widget-text">

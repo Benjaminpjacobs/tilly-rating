@@ -40,10 +40,10 @@ class DefaultLayout extends React.Component {
     return (
       <div>
         <Header />
-        <main> 
+        <main>
           {this.props.children}
           <footer className="footer">
-          Copyright © 2017 Chocolate free website, proudly powered by <a href="https://www.contentful.com">Contentful</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsbyjs</a>.
+          Copyright © 2017 TillyRating website, proudly powered by <a href="https://www.contentful.com">Contentful</a> and <a href="https://github.com/gatsbyjs/gatsby">Gatsbyjs</a>.
           </footer>
         </main>
       </div>

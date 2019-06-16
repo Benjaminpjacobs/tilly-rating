@@ -2,27 +2,29 @@ import React from "react";
 import ArticleHeader from "./ArticleHeader";
 import { Link } from "gatsby";
 
-import getArticleModule from "../utils/getArticleModule";
-
-const Article = ({ node }) => {
-  const { featureImage, contentModules } = node;
+const Article = () => {
+  const node= {
+    slug: "first_article",
+    title: "First Article",
+    html: "<p class='artcile-exceprt'>what's going to happen now</p>"
+  }
   return (
     <div className="c-article c-card u-marginBottomLarge">
-      <ArticleHeader node={node} />
-      {featureImage && featureImage.resolutions.src && (
+      <ArticleHeader node={ node } />
         <img
           style={{ margin: 0 }}
-          width={featureImage.resolutions.width}
-          height={featureImage.resolutions.height}
-          src={featureImage.resolutions.src}
-          srcSet={featureImage.resolutions.srcSet}
+          width='267px'
+          height='400px'
+          src="/assets/henrique-felix-113545-unsplash.jpg"
         />
-      )}
-      {contentModules.map((module, i) => getArticleModule(module, i))}
-
-      <Link rel="noopener" to={`/article/${node.slug}.html`}>
-        Read more...
-      </Link>
+      <div className="articl__teaser">
+        <section
+          dangerouslySetInnerHTML={{__html: node.html}}
+          className='content-module' />
+        <Link rel="noopener" to={`/article/${node.slug}.html`}>
+          Read more...
+        </Link>
+      </div>
     </div>
   );
 };
